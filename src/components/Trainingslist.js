@@ -26,7 +26,8 @@ const getTrainings = () => {
 const columns =[
     {
     Header: 'Date',
-    accessor: 'date'
+    accessor: 'date',
+    Cell: row => moment(row.value).format('DD.MM.YYYY HH:MM')
     
     },
     {
@@ -43,7 +44,7 @@ const columns =[
 
 return(
     <div>
-<ReactTable   defaultPageSize={5} filterable ={true} data={trainings}  columns={columns} />
+<ReactTable   defaultPageSize={10} filterable ={true} data={trainings}  columns={columns} />
     </div>
 );
 }
