@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
 import Customerslist from './components/Customerslist';
-import Trainingslist from './components/Trainingslist';
-import Workoutlist from './components/Workoutlist'
+import Workoutlist from './components/Workoutlist';
+import Calendar from './components/Calendar';
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom'
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -27,13 +27,12 @@ function App() {
                   Customers
                   </Button>
 
-                  <Button variant="contained" color="primary" href="trainingslist">
-                  Trainings
-                  </Button>
-
-
                   <Button variant="contained" color="primary" href="/workoutforyou">
                   In progress
+                  </Button>
+
+                  <Button variant="contained" color="primary" href="/calendar">
+                  Calendar
                   </Button>
        </Toolbar>
       </AppBar>
@@ -46,10 +45,9 @@ function App() {
                 <div>                      
    
                            <Switch>
-                            <Route exact path="/" component={Customerslist} />
-                            <Route path="/trainingslist" component={Trainingslist} />                            
+                            <Route exact path="/" component={Customerslist} />                                               
                             <Route path="/workoutforyou" component={Workoutlist} />
-                          
+                            <Route path="/calendar" component={Calendar} />
                         </Switch>
     
                 </div>

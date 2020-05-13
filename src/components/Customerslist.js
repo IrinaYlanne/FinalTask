@@ -109,10 +109,10 @@ const columns =[
                     },
                     {Cell: row => (<Editcustomer customer={row.original} updateCustomer={updateCustomer} />)
                     },
-                    {accessor:'links[0]href',
+                    {accessor:'links[0].href',
                     filterable: false,
                     minWidth: 60,
-                    Cell: row => (<Button color="secondary" size="small" onClick={() => deleteCustomer(row.value)}>Delete</Button>)
+                    Cell: row => (<Button color="secondary" size="small" onClick={() => deleteCustomer(row.original.links[0].href)}>Delete</Button>)
                     }
                     ]
 return(
